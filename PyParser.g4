@@ -6,17 +6,52 @@ program
     ;
     
 block 
-    : statement
+    : (TAB* (statement)+ NEWLINE*)*
     ;
       
 statement
-    : assignment statement
-    | NEWLINE statement
-    |
+    : assignment 
+    | if
+    | while
+    | for
     ;
          
 assignment
     : lvalue ASSIGNMENT rvalue
+    ;
+
+if  : IF bexpr COLON NEWLINE block (elif | else)?
+    ; 
+
+elif: ELIF bexpr COLON NEWLINE block (elif | else)?
+    ;
+
+else: ELSE COLON NEWLINE block
+    ;
+
+while
+    : WHILE bexpr COLON NEWLINE block
+    ;
+
+for : FOR lvalue IN iterable COLON NEWLINE block
+    ;
+
+iterable
+    : lvalue
+    | RANGE LPAR INT COMMA INT RPAR
+    ;
+
+bexpr
+    : bexpr logic_op bexpr
+    | LPAR bexpr RPAR
+    | NOT bexpr
+    | value
+    ;
+    
+logic_op
+    : OR
+    | AND
+    | CONDITION
     ;
           
 lvalue
@@ -24,14 +59,10 @@ lvalue
     ;
       
 rvalue
-    : (value | expr | list) (NEWLINE | )
+    : (value | expr | list)
     ;
 
-list: LBRA list_element RBRA
-    ;
-
-list_element
-    : rvalue ( COMMA list_element | )
+list: LBRA rvalue ( COMMA rvalue)* RBRA
     ;
     
 expr: expr OPERATOR expr
@@ -48,8 +79,8 @@ literal
     : number
     | float
     | BOOL
-    | CHAR
     | STRING
+    | CHAR
     ;
     
 number
@@ -61,3 +92,15 @@ float
     : INT PERIOD INT 
     ;
 
+comment
+    : (comment1 | comment2)
+    |
+    ;
+
+comment1
+    : POUND CHAR_SET*
+    ;
+
+comment2
+    : TICK3 CHAR_SET* TICK3
+    ;
