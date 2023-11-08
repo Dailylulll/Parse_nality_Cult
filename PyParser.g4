@@ -1,5 +1,5 @@
 parser grammar PyParser;
-options { tokenVocab=ExprLexer; }
+options { tokenVocab=PyLexer; }
 
 program
     : block EOF
