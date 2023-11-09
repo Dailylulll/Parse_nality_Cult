@@ -15,4 +15,6 @@ $ ./build.sh
 $ python3 parse.py input.py
 ```
 
-The output is a Lisp-style representation of the parse tree.
+The output is a Lisp-style representation of the parse tree:
+
+![](output_example.png)
