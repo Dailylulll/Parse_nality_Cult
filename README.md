@@ -39,3 +39,5 @@ The output is a Lisp-style representation of the parse tree.
 The following parse tree is produced for the deliverable 1 test case:
 
 ![](parse_tree_example.jpg)
+
+[Direct link to image file (you'll need to use your browser's zoom tool)](https://raw.githubusercontent.com/Dailylulll/Parse_nality_Cult/main/parse_tree_example.jpg)
