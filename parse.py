@@ -26,4 +26,4 @@ if errors > 0:
     print(f"{errors} syntax errors")
     sys.exit(1)
 
-print(tree.toStringTree(recog=parser))
+print(tree.toStringTree(recog=parser).replace("\\n", "\n"))

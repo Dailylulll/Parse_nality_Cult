@@ -32,6 +32,8 @@ pip install -r requirements.txt
 python3 parse.py input.py
 ```
 
-The output is a Lisp-style representation of the parse tree:
+The output is a Lisp-style representation of the parse tree.
 
-![](output_example.png)
+## Parse tree example
+
+![](parse_tree_example.jpg)
