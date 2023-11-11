@@ -36,4 +36,6 @@ The output is a Lisp-style representation of the parse tree.
 
 ## Parse tree example
 
+The following parse tree is produced for the deliverable 1 test case:
+
 ![](parse_tree_example.jpg)
