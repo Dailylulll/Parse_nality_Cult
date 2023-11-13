@@ -28,13 +28,22 @@ pip install -r requirements.txt
 ```
 
 ### Run the parser
+
+The following command will generate a parse tree and output the Lisp-style representation of it:
+
 ```
 python3 parse.py input.py
 ```
 
-The output is a Lisp-style representation of the parse tree.
+### Show an image of the parse tree
 
-## Parse tree example
+The following command will generate and display an image of the parse tree for the provided input Python script:
+
+```
+./show_parse_tree.sh input.py
+```
+
+## Example
 
 The following parse tree is produced for the deliverable 1 test case:
 
