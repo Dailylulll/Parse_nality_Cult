@@ -5,8 +5,8 @@ program
     : block EOF
     ;
     
-block 
-    : (TAB* (statement)+ NEWLINE*)*
+block
+    : (TAB* (statement | comment)+ NEWLINE*)*
     ;
       
 statement
@@ -93,14 +93,6 @@ float
     ;
 
 comment
-    : (comment1 | comment2)
-    |
+    : (COMMENT | BC)
     ;
-
-comment1
-    : POUND CHAR_SET*
-    ;
-
-comment2
-    : TICK3 CHAR_SET* TICK3
-    ;
+ 
