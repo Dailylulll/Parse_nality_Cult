@@ -4,6 +4,7 @@ WS  : [ \r\f]+ -> skip ;
 
 NEWLINE
     : '\n'
+    | '\r'
     ;
     
 TAB : '    ' 
@@ -99,10 +100,6 @@ AND : 'and'
     
 OR  : 'or'
     ;
-
-TICK3
-    : '\'\'\''
-    ;
    
 fragment 
 NEG : '-'
@@ -120,6 +117,14 @@ BOOL
     : 'True'
     | 'False'
     ;
+  
+TICK3
+    : '\'' '\'' '\''
+    ;
+ 
+COMMENT
+    : '#'+ .*? '\n'
+    ;
     
 ID  : [a-zA-Z_][a-zA-Z_0-9]* ;
     
@@ -127,10 +132,8 @@ CHAR: '\''[ -!#-&(-~]'\''
     ;
     
 STRING
-    : '"'[ -!#-&(-~]*'"'
+    : '"'~["]*'"'
     ;
-    
-CHAR_SET
-    : [ -!#-&(-~]
+BC
+    : TICK3 ([\n\ra-zA-Z_0-9. ',])+ TICK3
     ;
-
