@@ -6,7 +6,11 @@ program
     ;
     
 block
-    : (TAB* (statement | comment)+ NEWLINE*)*
+    : ((statement | comment)+ TAB* NEWLINE*)*
+    ;
+
+iblock
+    : (TAB (statement | comment)+ TAB* NEWLINE*)*
     ;
       
 statement
@@ -20,20 +24,20 @@ assignment
     : lvalue ASSIGNMENT rvalue
     ;
 
-if  : IF bexpr COLON NEWLINE block (elif | else)?
+if  : IF bexpr COLON NEWLINE iblock (elif | else)?
     ; 
 
-elif: ELIF bexpr COLON NEWLINE block (elif | else)?
+elif: ELIF bexpr COLON NEWLINE iblock (elif | else)?
     ;
 
-else: ELSE COLON NEWLINE block
+else: ELSE COLON NEWLINE iblock
     ;
 
 while
-    : WHILE bexpr COLON NEWLINE block
+    : WHILE bexpr COLON NEWLINE iblock
     ;
 
-for : FOR lvalue IN iterable COLON NEWLINE block
+for : FOR lvalue IN iterable COLON NEWLINE iblock
     ;
 
 iterable

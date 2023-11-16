@@ -26,6 +26,15 @@ class PyParserListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PyParser#iblock.
+    def enterIblock(self, ctx:PyParser.IblockContext):
+        pass
+
+    # Exit a parse tree produced by PyParser#iblock.
+    def exitIblock(self, ctx:PyParser.IblockContext):
+        pass
+
+
     # Enter a parse tree produced by PyParser#statement.
     def enterStatement(self, ctx:PyParser.StatementContext):
         pass
@@ -194,24 +203,6 @@ class PyParserListener(ParseTreeListener):
 
     # Exit a parse tree produced by PyParser#comment.
     def exitComment(self, ctx:PyParser.CommentContext):
-        pass
-
-
-    # Enter a parse tree produced by PyParser#comment1.
-    def enterComment1(self, ctx:PyParser.Comment1Context):
-        pass
-
-    # Exit a parse tree produced by PyParser#comment1.
-    def exitComment1(self, ctx:PyParser.Comment1Context):
-        pass
-
-
-    # Enter a parse tree produced by PyParser#comment2.
-    def enterComment2(self, ctx:PyParser.Comment2Context):
-        pass
-
-    # Exit a parse tree produced by PyParser#comment2.
-    def exitComment2(self, ctx:PyParser.Comment2Context):
         pass
 
 

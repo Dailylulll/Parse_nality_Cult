@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [ $# -ne 1 ]; then
 	echo "usage: show_parse_tree.sh PYTHON_FILE"
 	exit 1
