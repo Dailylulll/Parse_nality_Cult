@@ -1,10 +1,10 @@
 __pycache__/
 .DS_Store
 
-# PyLexer.interp
-# PyLexer.py
-# PyLexer.tokens
-# PyParser.interp
-# PyParser.py
-# PyParser.tokens
-# PyParserListener.py
+PyLexer.interp
+PyLexer.py
+PyLexer.tokens
+PyParser.interp
+PyParser.py
+PyParser.tokens
+PyParserListener.py
