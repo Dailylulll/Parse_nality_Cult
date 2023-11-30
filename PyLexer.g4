@@ -6,8 +6,16 @@ NEWLINE
     : '\n'
     | '\r'
     ;
+
+INDENT
+    : 'indent'
+    ;
+
+DEDENT
+    : 'dedent'
+    ;
     
-TAB : '    ' 
+TAB :'    '
     | '\t' 
     ;
     
@@ -117,10 +125,6 @@ BOOL
     : 'True'
     | 'False'
     ;
-  
-TICK3
-    : '\'' '\'' '\''
-    ;
  
 COMMENT
     : '#'+ .*? '\n'
@@ -135,5 +139,5 @@ STRING
     : '"'~["]*'"'
     ;
 BC
-    : TICK3 ([\n\ra-zA-Z_0-9. ',])+ TICK3
+    : '\'\'\'' ( . | '\r' | '\n' )*? '\'\'\''
     ;

@@ -2,15 +2,11 @@ parser grammar PyParser;
 options { tokenVocab=PyLexer; }
 
 program
-    : block EOF
+    : block EOF?
     ;
     
 block
-    : ((statement | comment)+ TAB* NEWLINE*)*
-    ;
-
-iblock
-    : (TAB (statement | comment)+ TAB* NEWLINE*)*
+    : ((statement | comment) TAB* NEWLINE*)* 
     ;
       
 statement
@@ -24,20 +20,20 @@ assignment
     : lvalue ASSIGNMENT rvalue
     ;
 
-if  : IF bexpr COLON NEWLINE iblock (elif | else)?
+if  : IF bexpr COLON NEWLINE INDENT block DEDENT (elif | else)?
     ; 
 
-elif: ELIF bexpr COLON NEWLINE iblock (elif | else)?
+elif: ELIF bexpr COLON NEWLINE INDENT block DEDENT (elif | else)?
     ;
 
-else: ELSE COLON NEWLINE iblock
+else: ELSE COLON NEWLINE INDENT block DEDENT 
     ;
 
 while
-    : WHILE bexpr COLON NEWLINE iblock
+    : WHILE bexpr COLON NEWLINE INDENT block DEDENT 
     ;
 
-for : FOR lvalue IN iterable COLON NEWLINE iblock
+for : FOR lvalue IN iterable COLON NEWLINE INDENT block DEDENT 
     ;
 
 iterable
