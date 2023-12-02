@@ -43,15 +43,18 @@ iterable
 
 bexpr
     : bexpr logic_op bexpr
+    | bexpr CONDITION bexpr
+    | BOOL logic_op BOOL
+    | value CONDITION value
     | LPAR bexpr RPAR
     | NOT bexpr
-    | value
+    | NOT value
+    | BOOL
     ;
     
 logic_op
     : OR
     | AND
-    | CONDITION
     ;
           
 lvalue
