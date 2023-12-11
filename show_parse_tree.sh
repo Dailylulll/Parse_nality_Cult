@@ -3,4 +3,5 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
-antlr4-parse PyLexer.g4 PyParser.g4 program -gui < "$1"
+p_script=$(python3 preprocessor.py < "$1")
+printf '%s' "$p_script" | antlr4-parse PyLexer.g4 PyParser.g4 program -gui

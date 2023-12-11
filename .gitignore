@@ -10,5 +10,5 @@ PyParser.py
 PyParser.tokens
 PyParserListener.py
 
-*:Zone.Identifier
+*\:Zone.Identifier
 tmp.txt
