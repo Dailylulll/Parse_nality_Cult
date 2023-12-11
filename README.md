@@ -45,8 +45,8 @@ The following command will generate and display an image of the parse tree for t
 
 ## Example
 
-The following parse tree is produced for the deliverable 2 test case:
+The following parse tree is produced for the deliverable 3 test case:
 
-![](antlr4_parse_tree.png)
+![](antlr4_parse_tree_tc3.png)
 
-[Direct link to image file (you'll need to use your browser's zoom tool)](https://raw.githubusercontent.com/Dailylulll/Parse_nality_Cult/main/antlr4_parse_tree.png)
+[Direct link to image file (you'll need to use your browser's zoom tool)](https://raw.githubusercontent.com/Dailylulll/Parse_nality_Cult/main/antlr4_parse_tree_tc3.png)
